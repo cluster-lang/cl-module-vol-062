@@ -1,0 +1,12 @@
+// cl-phys-rk4-integrator-stage-3363: Test Suite
+import "../prk_3363.zk"
+
+fn test_run():
+    res := rk4_step_3363(10.0, 3.0, 3.0, 1.0)
+    diff := res - 46.6300
+    if diff < 0.0: diff = 0.0 - diff
+    if diff > 0.01: sys_exit(1)
+
+fn main():
+    test_run()
+    print("✓ All tests passed for cl-phys-rk4-integrator-stage-3363!")
